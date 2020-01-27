@@ -22,14 +22,21 @@
         {
             int result = 0;
             int[] monthPerDay = new int[12] { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-            if(IsLeapYear(year) == false)
+            if (year > 9999 || month == 0 || month > monthPerDay.Length)
             {
-                result = monthPerDay[month - 1];
+                result = -1;
             }
-            else if (IsLeapYear(year) == true)
+            else
             {
-                monthPerDay[1] += 1;
-                result = monthPerDay[month - 1];
+                if (IsLeapYear(year) == false)
+                {
+                    result = monthPerDay[month - 1];
+                }
+                else if (IsLeapYear(year) == true)
+                {
+                    monthPerDay[1] += 1;
+                    result = monthPerDay[month - 1];
+                }
             }
             return result;
         }
