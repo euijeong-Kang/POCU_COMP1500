@@ -11,16 +11,16 @@ namespace Assignment1
             {
                 width = 10;
             }
-            string intString = "int";
+            string intString = "dec";
             string hexString = "hex";
             string otcString = "oct";
             string boder = "";
 
-            string read1 = input.ReadLine();
-            string read2 = input.ReadLine();
-            string read3 = input.ReadLine();
-            string read4 = input.ReadLine();
-            string read5 = input.ReadLine();
+            string read1 = int.Parse(input.ReadLine()).ToString();
+            string read2 = int.Parse(input.ReadLine()).ToString();
+            string read3 = int.Parse(input.ReadLine()).ToString();
+            string read4 = int.Parse(input.ReadLine()).ToString();
+            string read5 = int.Parse(input.ReadLine()).ToString();
 
             intString = intString.PadLeft(width, ' ');
             hexString = hexString.PadLeft(width, ' ');
@@ -31,31 +31,31 @@ namespace Assignment1
             output.WriteLine($"{boder.PadLeft(width, '-')} {boder.PadLeft(width, '-')} {boder.PadLeft(width, '-')}");
 
             intString = read1.PadLeft(width, ' ');
-            hexString = Convert.ToString(int.Parse(read1), 16).PadLeft(width, ' ');
+            hexString = Convert.ToString(int.Parse(read1), 16).ToUpper().PadLeft(width, ' ');
             otcString = Convert.ToString(int.Parse(read1), 8).PadLeft(width, ' ');
 
             output.WriteLine($"{otcString} {intString} {hexString}");
             //
             intString = read2.PadLeft(width, ' ');
-            hexString = Convert.ToString(int.Parse(read2), 16).PadLeft(width, ' ');
+            hexString = Convert.ToString(int.Parse(read2), 16).ToUpper().PadLeft(width, ' ');
             otcString = Convert.ToString(int.Parse(read2), 8).PadLeft(width, ' ');
 
             output.WriteLine($"{otcString} {intString} {hexString}");
             //
             intString = read3.PadLeft(width, ' ');
-            hexString = Convert.ToString(int.Parse(read3), 16).PadLeft(width, ' ');
+            hexString = Convert.ToString(int.Parse(read3), 16).ToUpper().PadLeft(width, ' ');
             otcString = Convert.ToString(int.Parse(read3), 8).PadLeft(width, ' ');
 
             output.WriteLine($"{otcString} {intString} {hexString}");
             //
             intString = read4.PadLeft(width, ' ');
-            hexString = Convert.ToString(int.Parse(read4), 16).PadLeft(width, ' ');
+            hexString = Convert.ToString(int.Parse(read4), 16).ToUpper().PadLeft(width, ' ');
             otcString = Convert.ToString(int.Parse(read4), 8).PadLeft(width, ' ');
 
             output.WriteLine($"{otcString} {intString} {hexString}");
             //
             intString = read5.PadLeft(width, ' ');
-            hexString = Convert.ToString(int.Parse(read5), 16).PadLeft(width, ' ');
+            hexString = Convert.ToString(int.Parse(read5), 16).ToUpper().PadLeft(width, ' ');
             otcString = Convert.ToString(int.Parse(read5), 8).PadLeft(width, ' ');
 
             output.WriteLine($"{otcString} {intString} {hexString}");
