@@ -50,7 +50,7 @@ namespace Lab5
                 }
             }
 
-            if (usersPerDay.Length != revenuePerDay.Length || revenuePerDay.Length == 0)
+            if (usersPerDay.Length != revenuePerDay.Length || revenuePerDay.Length == 0 || usersPerDay.Length == 0)
             {
                 bResult = true;
             }
@@ -115,7 +115,7 @@ namespace Lab5
                         break;
                 }
             }
-            if (usersPerDay.Length != revenuePerDay.Length || revenuePerDay.Length == 0)
+            if (usersPerDay.Length != revenuePerDay.Length || revenuePerDay.Length == 0 || usersPerDay.Length == 0)
             {
                 invaildCount = -1;
             }
@@ -136,7 +136,7 @@ namespace Lab5
         public static double CalculateTotalRevenue(double[] revenuePerDay, uint start, uint end)
         {
             double totalRevenue = 0;
-            if (revenuePerDay.Length == 0 || start >= end || start < 0 || end < 1 || start > revenuePerDay.Length - 1 || end > revenuePerDay.Length -1)
+            if (revenuePerDay.Length == 0 || start > end || start < 0 || end < 0 || start > revenuePerDay.Length - 1 || end > revenuePerDay.Length -1)
             {
                 totalRevenue = -1;
             }
