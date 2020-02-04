@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Assignment2
 {
-    class EnumShap
+    class ESape
     {
     }
 }

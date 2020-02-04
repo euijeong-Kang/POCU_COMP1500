@@ -50,23 +50,24 @@ namespace Lab5
                 }
             }
 
-            if (usersPerDay.Length != revenuePerDay.Length || revenuePerDay == null || usersPerDay == null)
+            if (revenuePerDay == null || usersPerDay == null)
             {
                 bResult = true;
             }
-            if (usersPerDay.Length == revenuePerDay.Length)
+
+            for (int i = 0; i < correctRevenuePerDay.Length; i++)
             {
-                for (int i = 0; i < correctRevenuePerDay.Length; i++)
+                if (correctRevenuePerDay[i] != revenuePerDay[i])
                 {
-                    if (correctRevenuePerDay[i] != revenuePerDay[i])
-                    {
-                        bResult = true;
-                        revenuePerDay[i] = correctRevenuePerDay[i];
-                    }
+                    bResult = true;
+                    revenuePerDay[i] = correctRevenuePerDay[i];
                 }
             }
-            
-            
+            if (usersPerDay.Length != revenuePerDay.Length)
+            {
+                bResult = false;
+            }
+
             return bResult;
         }
 
