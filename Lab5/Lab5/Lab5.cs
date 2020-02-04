@@ -54,20 +54,21 @@ namespace Lab5
             {
                 bResult = true;
             }
-
-            for (int i = 0; i < correctRevenuePerDay.Length; i++)
-            {
-                if (correctRevenuePerDay[i] != revenuePerDay[i])
-                {
-                    bResult = true;
-                    revenuePerDay[i] = correctRevenuePerDay[i];
-                }
-            }
             if (usersPerDay.Length != revenuePerDay.Length)
             {
                 bResult = false;
             }
-
+            else
+            {
+                for (int i = 0; i < correctRevenuePerDay.Length; i++)
+                {
+                    if (correctRevenuePerDay[i] != revenuePerDay[i])
+                    {
+                        bResult = true;
+                        revenuePerDay[i] = correctRevenuePerDay[i];
+                    }
+                }
+            }
             return bResult;
         }
 
