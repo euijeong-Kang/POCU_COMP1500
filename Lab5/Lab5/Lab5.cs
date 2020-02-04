@@ -54,14 +54,18 @@ namespace Lab5
             {
                 bResult = true;
             }
-            for (int i = 0; i < correctRevenuePerDay.Length; i++)
+            if (usersPerDay.Length == revenuePerDay.Length)
             {
-                if (correctRevenuePerDay[i] != revenuePerDay[i])
+                for (int i = 0; i < correctRevenuePerDay.Length; i++)
                 {
-                    bResult = true;
-                    revenuePerDay[i] = correctRevenuePerDay[i];
+                    if (correctRevenuePerDay[i] != revenuePerDay[i])
+                    {
+                        bResult = true;
+                        revenuePerDay[i] = correctRevenuePerDay[i];
+                    }
                 }
             }
+            
             
             return bResult;
         }
@@ -112,7 +116,7 @@ namespace Lab5
                         break;
                 }
             }
-            if (usersPerDay.Length != revenuePerDay.Length || revenuePerDay.Length == 0 || usersPerDay.Length == 0)
+            if (usersPerDay.Length != revenuePerDay.Length || revenuePerDay == null || usersPerDay == null)
             {
                 invaildCount = -1;
             }
