@@ -6,5 +6,12 @@ namespace Assignment2
 {
     class ESape
     {
+        enum EShape
+        {
+            Rectangle,
+            IsoscelesRightTriangle,
+            IsoscelesTriangle,
+            Circle
+        }
     }
 }
