@@ -25,7 +25,7 @@
             int columnCount = data.GetLength(0);
             int rowCount = data.GetLength(1);
 
-            int[,] cloneData = (int[,]) data.Clone();
+            int[,] cloneData = (int[,])data.Clone();
 
             for (int i = 0; i < columnCount; i++)
             {
