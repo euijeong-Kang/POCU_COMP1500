@@ -20,7 +20,7 @@
             return result;
         }
 
-        public static int[,] TransformArray(int[,] data, EMode mode)
+        public static void TransformArray(int[,] data, EMode mode)
         {
             int columnCount = data.GetLength(0);
             int rowCount = data.GetLength(1);
@@ -56,7 +56,6 @@
                     }
                 }
             }
-            return data;
         }
 
     }
