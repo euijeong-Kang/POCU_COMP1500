@@ -51,7 +51,7 @@
                         }
                         else if (shape == EShape.Circle)
                         {
-                            if (width % 2 != 0)
+                            if (width % 2 != 0 && width == height)
                             {
                                 if ((centerNum - i) * (centerNum - i) + (centerNum - j) * (centerNum - j) <= radius * radius)
                                 {
@@ -72,11 +72,18 @@
         public static bool IsShape(char[,] canvas, EShape shape)
         {
             bool bResult = false;
-
-            if (shape == GetEShape(canvas))
+            if (canvas.GetLength(0) != 0 && canvas.GetLength(1) != 0)
             {
-                bResult = true;
+                if (canvas.GetLength(0) - 4 == 1 && canvas.GetLength(1) - 4 == 1)
+                {
+                    bResult = true;
+                }
+                if (shape == GetEShape(canvas, shape))
+                {
+                    bResult = true;
+                }
             }
+            
 
             return bResult;
         }
@@ -111,14 +118,14 @@
             }
             return result;
         }
-        public static EShape GetEShape(char[,] canvas)
+        public static EShape GetEShape(char[,] canvas, EShape shape)
         {
             int height = canvas.GetLength(0) - 4;
             int width = canvas.GetLength(1) - 4;
             int centerNum = (width + 4) / 2;
             int radius = centerNum - 2;
 
-            EShape shapeOfCanvas = EShape.Rectangle;
+            EShape shapeOfCanvas = shape; 
 
             for (int i = 2; i < canvas.GetLength(0) - 2; i++)
             {
