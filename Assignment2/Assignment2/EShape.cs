@@ -4,7 +4,11 @@ using System.Text;
 
 namespace Assignment2
 {
-    class EShape
+    public enum EShape
     {
+        Rectangle,
+        IsoscelesRightTriangle,
+        IsoscelesTriangle,
+        Circle
     }
 }
