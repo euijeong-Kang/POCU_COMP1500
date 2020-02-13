@@ -71,20 +71,92 @@
         }
         public static bool IsShape(char[,] canvas, EShape shape)
         {
-            bool bResult = false;
+            int height = canvas.GetLength(0) - 4;
+            int width = canvas.GetLength(1) - 4;
+            int centerNum = (width + 4) / 2;
+            int radius = centerNum - 2;
+
+            bool bResult = true;
+
+
             if (canvas.GetLength(0) != 0 && canvas.GetLength(1) != 0)
             {
                 if (canvas.GetLength(0) - 4 == 1 && canvas.GetLength(1) - 4 == 1)
                 {
                     bResult = true;
                 }
-                if (shape == GetEShape(canvas, shape))
+                else
                 {
-                    bResult = true;
+                    for (int i = 2; i < canvas.GetLength(0) - 2; i++)
+                    {
+                        for (int j = 2; j < canvas.GetLength(1) - 2; j++)
+                        {
+                            if (shape == EShape.Rectangle)
+                            {
+                                if (canvas[i, j] != '*')
+                                {
+                                    bResult = false;
+                                }
+                            }
+                            else if (shape == EShape.IsoscelesTriangle)
+                            {
+                                if (width == height * 2 - 1)
+                                {
+                                    if (centerNum + i - 2 >= j && centerNum + 2 - i <= j)
+                                    {
+                                        if (canvas[i, j] != '*')
+                                        {
+                                            bResult = false;
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    bResult = false;
+                                }
+                            }
+                            else if (shape == EShape.IsoscelesRightTriangle)
+                            {
+                                if (width == height)
+                                {
+                                    if (i >= j)
+                                    {
+                                        if (canvas[i, j] != '*')
+                                        {
+                                            bResult = false;
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    bResult = false;
+                                }
+                            }
+                            else if (shape == EShape.Circle)
+                            {
+                                if (width % 2 != 0 && width == height)
+                                {
+                                    if ((centerNum - i) * (centerNum - i) + (centerNum - j) * (centerNum - j) <= radius * radius)
+                                    {
+                                        if (canvas[i, j] != '*')
+                                        {
+                                            return false;
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    bResult = false;
+                                }
+                            }
+                        }
+                    }
                 }
             }
-            
 
+
+
+            
             return bResult;
         }
 
@@ -117,70 +189,6 @@
                 }
             }
             return result;
-        }
-        public static EShape GetEShape(char[,] canvas, EShape shape)
-        {
-            int height = canvas.GetLength(0) - 4;
-            int width = canvas.GetLength(1) - 4;
-            int centerNum = (width + 4) / 2;
-            int radius = centerNum - 2;
-
-            EShape shapeOfCanvas = shape; 
-
-            for (int i = 2; i < canvas.GetLength(0) - 2; i++)
-            {
-                for (int j = 2; j < canvas.GetLength(1) - 2; j++)
-                {
-                    if (canvas[i, j] != '*')
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        shapeOfCanvas = EShape.Rectangle;
-                    }
-                    if (i >= j)
-                    {
-                        if (canvas[i, j] != '*')
-                        {
-                            break;
-                        }
-                        else
-                        {
-                            shapeOfCanvas = EShape.IsoscelesRightTriangle;
-                        }
-                    }
-                    else if (width == height * 2 - 1)
-                    {
-                        if (centerNum + i - 2 >= j && centerNum + 2 - i <= j)
-                        {
-                            if (canvas[i, j] != '*')
-                            {
-                                break;
-                            }
-                            else
-                            {
-                                shapeOfCanvas = EShape.IsoscelesTriangle;
-                            }
-                        }
-                    }
-                    else if (width % 2 != 0)
-                    {
-                        if ((centerNum - i) * (centerNum - i) + (centerNum - j) * (centerNum - j) <= radius * radius)
-                        {
-                            if (canvas[i, j] != '*')
-                            {
-                                break;
-                            }
-                            else
-                            {
-                                shapeOfCanvas = EShape.Circle;
-                            }
-                        }
-                    }
-                }
-            }
-            return shapeOfCanvas;
         }
     }
 }
