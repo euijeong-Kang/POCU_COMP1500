@@ -78,7 +78,6 @@
 
             bool bResult = true;
 
-
             if (canvas.GetLength(0) != 0 && canvas.GetLength(1) != 0)
             {
                 if (canvas.GetLength(0) - 4 == 1 && canvas.GetLength(1) - 4 == 1)
@@ -109,6 +108,13 @@
                                             bResult = false;
                                         }
                                     }
+                                    else
+                                    {
+                                        if (canvas[i, j] == '*')
+                                        {
+                                            bResult = false;
+                                        }
+                                    }
                                 }
                                 else
                                 {
@@ -122,6 +128,13 @@
                                     if (i >= j)
                                     {
                                         if (canvas[i, j] != '*')
+                                        {
+                                            bResult = false;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (canvas[i, j] == '*')
                                         {
                                             bResult = false;
                                         }
@@ -140,7 +153,14 @@
                                     {
                                         if (canvas[i, j] != '*')
                                         {
-                                            return false;
+                                            bResult = false;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (canvas[i, j] == '*')
+                                        {
+                                            bResult = false;
                                         }
                                     }
                                 }
@@ -153,10 +173,10 @@
                     }
                 }
             }
-
-
-
-            
+            else
+            {
+                bResult = false;
+            }           
             return bResult;
         }
 
