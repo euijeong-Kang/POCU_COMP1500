@@ -6,7 +6,7 @@
         public static bool PlayGame(uint[] array)
         {
             bool bResult = false;
-            if (array.Length > 1 && array[0] < array.Length - 1)
+            if (array.Length > 1 && array[0] < array.Length)
             {
                 uint location = array[0];
 
@@ -19,6 +19,10 @@
                     bResult = false;
                 }
 
+            }
+            else
+            {
+                bResult = false;
             }
 
             return bResult;
