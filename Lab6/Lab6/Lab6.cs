@@ -6,7 +6,6 @@
         {
             int rowCount = data.GetLength(0);
             int columnCount = data.GetLength(1);
-
             int[,] result = new int[columnCount, rowCount];
 
             for (int i = 0; i < columnCount; i++)
@@ -16,15 +15,12 @@
                     result[i, j] = data[rowCount - 1 - j, i];
                 }
             }
-
             return result;
         }
-
         public static void TransformArray(int[,] data, EMode mode)
         {
             int columnCount = data.GetLength(0);
             int rowCount = data.GetLength(1);
-
             int[,] cloneData = new int[columnCount, rowCount];
 
             for (int i = 0; i < columnCount; i++)
@@ -59,12 +55,10 @@
                         {
                             row = rowCount - 1;
                         }
-
                         data[i, j] = cloneData[column, row];
                     }
                 }
             }
         }
-
     }
 }
