@@ -2,62 +2,44 @@
 {
     public static class Lab7
     {
-        
         public static bool PlayGame(uint[] array)
         {
             bool bResult = false;
             if (array.Length > 1 && array[0] < array.Length)
             {
-                uint location = array[0];
-                
-                if (MoveRecursive(location, array) == 0)
+                int[] locations = new int[1];
+                locations[0] = array.Length - 1;
+
+                if (MoveRcursive(locations, array) == 0)
                 {
                     bResult = true;
                 }
-                if (MoveRecursive(location, array) == uint.MaxValue)
+                if (MoveRcursive(locations, array) == uint.MaxValue)
                 {
                     bResult = false;
                 }
-                
             }
-           
             return bResult;
         }
-        public static uint MoveRecursive(uint location, uint[] array)
+        public static uint MoveRcursive(int[] locations, uint[] array)
         {
-            if (array[location] == 0)
+            if (locations[0] == 0)
             {
                 return 0;
             }
-            if ((int)location - array[location] > 0 && array[location + array[location]] != 0)
+            for (int i = 0; i < array.Length - 1; i++)
             {
-                location -= array[location];
-                if ((int)location - array[location] <= 0 && array[location] == array[location + array[location]])
+                if (i + array[i] == locations[0] || i - array[i] == locations[0])
                 {
-                    location += array[location];
-                    if (location + array[location] > array.Length)
-                    {
-                        return uint.MaxValue;
-                    }
-                    else
-                    {
-                        location += array[location];
-                    }
+                    locations[0] = i;
+                    break;
                 }
-            }
-            else
-            {   
-                if (location + array[location] > array.Length)
+                if (i == array.Length - 2)
                 {
                     return uint.MaxValue;
                 }
-                location += array[location];
-                
             }
-            return MoveRecursive(location, array);
-            
+            return MoveRcursive(locations, array);
         }
-
-        
     }
 }
