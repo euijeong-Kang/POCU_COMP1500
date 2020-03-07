@@ -11,11 +11,23 @@ namespace Lab7
 
             Debug.Assert(!bPass);
 
-            array = new uint[12] { 3, 6, 2, 4, 4, 6, 1, 1, 4, 5, 1, 0 };
+            
+
+            array = new uint[] { 5, 4, 1, 2, 1, 2, 0 };
             bPass = Lab7.PlayGame(array);
 
+            Debug.Assert(!bPass);
+
+            array = new uint[] { 7, 4, 1, 2, 1, 2, 1, 2, 0 };
+            bPass = Lab7.PlayGame(array);
+
+            Debug.Assert(!bPass);
+
+            array = new uint[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 };
+            bPass = Lab7.PlayGame(array); // true
+
             Debug.Assert(bPass);
-            
+
 
 
         }
