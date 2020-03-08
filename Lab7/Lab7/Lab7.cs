@@ -5,7 +5,6 @@
         public static bool PlayGame(uint[] array)
         {
             bool bResult = false;
-            
             if (array.Length > 1 && array[0] > 0 && array[0] < array.Length)
             {
                 uint location = 0;
@@ -18,7 +17,7 @@
                 }
                 else if (MoveRecursive(location, array, visitArray) == uint.MaxValue)
                 {
-                    bResult = false;
+                    return false;
                 }
             }
             return bResult;
@@ -33,7 +32,6 @@
             {
                 visitArray[location] = 1;
                 location += array[location];
-
             }
             else if ((int)location - array[location] > 0 && visitArray[location - array[location]] != 1)
             {
@@ -45,20 +43,15 @@
                 visitArray[location] = 1;
                 for (uint i = 1; i < array.Length; i++)
                 {
-                    
-                    if ((int)i - array[i] > 0)
+                    if ((int)i - array[i] > 0 && visitArray[i] == 1 && visitArray[i - array[i]] != 1)
                     {
-                        if (visitArray[i] == 1 && visitArray[i - array[i]] != 1)
-                        {
-                            location = i;
-                            break;
-                        }
-                        if (i == array.Length - 1)
-                        {
-                            return uint.MaxValue;
-                        }
+                        location = i;
+                        break;
                     }
-
+                    if (i == array.Length - 1)
+                    {
+                        return uint.MaxValue;
+                    }
                 }
             }
             return MoveRecursive(location, array, visitArray);
