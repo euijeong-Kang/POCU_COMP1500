@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿
+using System;
+using System.Diagnostics;
 
 namespace Lab7
 {
@@ -90,9 +92,6 @@ namespace Lab7
             bPass = Lab7.PlayGame(array); // true
 
             Debug.Assert(bPass);
-
-
-
         }
     }
 }
