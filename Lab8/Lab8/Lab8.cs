@@ -17,9 +17,10 @@ namespace Lab8
                 if (s[i] != ' ')
                 {
                     bEmptyString = false;
+                    break;
                 }
             }
-            if (bEmptyString != false)
+            if (bEmptyString == true)
             {
                 return null;
             }
