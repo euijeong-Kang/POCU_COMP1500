@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System;
 namespace Lab8
 {
     public static class Lab8
@@ -41,7 +42,7 @@ namespace Lab8
                             {
                                 for (int k = splitedStringLevel3.Length - 1; k > 0; k--)
                                 {
-                                    result.Insert(0, $"        - {splitedStringLevel3[k]}\n");
+                                    result.Insert(0, $"        - {splitedStringLevel3[k]}{Environment.NewLine}");
                                 }
                             }
                             char a = (char)count;
@@ -49,7 +50,7 @@ namespace Lab8
                             {
                                 splitedStringLevel2[j] = splitedStringLevel2[j].Split('/')[0];
                             }
-                            result.Insert(0, $"    {a}) {splitedStringLevel2[j]}\n");
+                            result.Insert(0, $"    {a}) {splitedStringLevel2[j]}{Environment.NewLine}");
                             count--;
                         }
                     }
@@ -57,7 +58,7 @@ namespace Lab8
                     {
                         splitedStringLevel1[i] = splitedStringLevel1[i].Split('_')[0];
                     }
-                    result.Insert(0, $"{numCount}) {splitedStringLevel1[i]}\n");
+                    result.Insert(0, $"{numCount}) {splitedStringLevel1[i]}{Environment.NewLine}");
                     numCount--;
                 }
             }
