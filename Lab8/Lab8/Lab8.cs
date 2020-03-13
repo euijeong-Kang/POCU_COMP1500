@@ -6,15 +6,14 @@ namespace Lab8
     {
         public static string PrettifyList(string s)
         {
-            
             if (s == null)
             {
                 return null;
             }
-            bool bEmptyString = true;
+            bool bEmptyString = false;
             for (int i = 0; i < s.Length; i++)
             {
-                if (s[i] != ' ')
+                if (s[i] == ' ' || s == $"{Environment.NewLine}")
                 {
                     bEmptyString = false;
                     break;
@@ -24,6 +23,7 @@ namespace Lab8
             {
                 return null;
             }
+
             StringBuilder result = new StringBuilder(2048);
 
             string[] splitedStringLevel1 = s.Split('|');
@@ -64,6 +64,7 @@ namespace Lab8
                 }
             }
             result.Remove(result.Length - 1, 0);
+            
             return result.ToString(); ;
         }
     }
