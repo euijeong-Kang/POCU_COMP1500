@@ -6,20 +6,7 @@ namespace Lab8
     {
         public static string PrettifyList(string s)
         {
-            if (s == null)
-            {
-                return null;
-            }
-            bool bEmptyString = false;
-            for (int i = 0; i < s.Length; i++)
-            {
-                if (s[i] == ' ' || s == $"{Environment.NewLine}")
-                {
-                    bEmptyString = false;
-                    break;
-                }
-            }
-            if (bEmptyString == true)
+            if (s == null || s.Trim().Length == 0)
             {
                 return null;
             }
