@@ -28,18 +28,18 @@ namespace Lab8
             if (splitedStringLevel1.Length > 0)
             {
                 int numCount = splitedStringLevel1.Length;
-                for (int i = splitedStringLevel1.Length - 1; i >= 0 ; i--)
+                for (int i = splitedStringLevel1.Length - 1; i >= 0; i--)
                 {
                     string[] splitedStringLevel2 = splitedStringLevel1[i].Split('_');
                     if (splitedStringLevel2.Length > 0)
                     {
                         int count = 95 + splitedStringLevel2.Length;
-                        for (int j = splitedStringLevel2.Length - 1; j > 0 ; j--)
+                        for (int j = splitedStringLevel2.Length - 1; j > 0; j--)
                         {
                             string[] splitedStringLevel3 = splitedStringLevel2[j].Split('/');
                             if (splitedStringLevel3.Length > 0)
                             {
-                                for (int k = splitedStringLevel3.Length - 1; k > 0 ; k--)
+                                for (int k = splitedStringLevel3.Length - 1; k > 0; k--)
                                 {
                                     result.Insert(0, $"        - {splitedStringLevel3[k]}\n");
                                 }
@@ -61,6 +61,7 @@ namespace Lab8
                     numCount--;
                 }
             }
+            result.Remove(result.Length - 1, 0);
             return result.ToString(); ;
         }
     }
