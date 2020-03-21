@@ -8,15 +8,6 @@ namespace Lab8
         static void Main(string[] args)
         {
  
-
-            string sting = "  ";
-            string d = "";
-            sting = sting.Trim();
-            d = d.Trim();
-
-            Console.WriteLine(sting.Length);
-            Console.WriteLine(d.Length);
-
         }
     }
 }
