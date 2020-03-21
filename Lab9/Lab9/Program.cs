@@ -22,7 +22,7 @@ namespace Lab9
                 Debug.Assert(expectedList[i] == combinedList[i]);
             }
 
-            List<string> keys = new List<string> { "hello", "world", "comp1500", "intro", "to", "c#" };
+            List<string> keys = new List<string> { "to", "to", "to", "to", "to", "to", "to", "to", "to", "to" };
             List<int> values = new List<int> { 2, 5, 10, 40, -11, -50 };
 
             Dictionary<string, int> dict = Lab9.CombineListsToDictionary(keys, values);
