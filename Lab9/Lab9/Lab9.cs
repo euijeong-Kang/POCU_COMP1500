@@ -49,6 +49,7 @@ namespace Lab9
                     result.Add(removedDuplicationKeys[i], values[i]);
                 }
             }
+
             return result;
         }
 
@@ -65,7 +66,10 @@ namespace Lab9
                 {
                     int value;
                     denominators.TryGetValue(pair.Key, out value);
-                    
+                    if (value == 0)
+                    {
+                        continue;
+                    }
                     result.Add(pair.Key, Math.Abs((decimal)pair.Value /value));
                 }
             }

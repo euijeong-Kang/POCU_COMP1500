@@ -55,7 +55,7 @@ namespace Lab9
             };
             Dictionary<string, int> denominators = new Dictionary<string, int>
             {
-                { "a", 0 },
+                { "a", 77 },
                 { "b", 235 },
                 { "c", -3 },
                 { "d", 121 },
