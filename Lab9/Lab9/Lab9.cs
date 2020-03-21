@@ -9,8 +9,18 @@ namespace Lab9
         {
             int temp;
             List<int> result = new List<int>();
-            result.AddRange(sortedList1);
-            result.AddRange(sortedList2);
+            if (sortedList1 != null)
+            {
+                result.AddRange(sortedList1);
+            }
+            if (sortedList2 != null)
+            {
+                result.AddRange(sortedList2);
+            }
+            if (result == null)
+            {
+                return result;
+            }
             for (int i = 0; i < result.Count; i++)
             {
                 int count = i;
@@ -32,8 +42,7 @@ namespace Lab9
         {
             Dictionary<string, int> result = new Dictionary<string, int>();
 
-            List<string> removedDuplicationKeys = new List<string>();
-            removedDuplicationKeys.AddRange(RemoveDuplication(keys));
+            List<string> removedDuplicationKeys = RemoveDuplication(keys);
             int count;
             if (removedDuplicationKeys.Count <= values.Count)
             {
@@ -77,12 +86,20 @@ namespace Lab9
             }
             return result;
         }
-        public static HashSet<string> RemoveDuplication(List<string> keys)
+        public static List<string> RemoveDuplication(List<string> keys)
         {
-            HashSet<string> result = new HashSet<string>();
-            foreach (string key in keys)
+            List<string> result = new List<string>();
+        
+            for (int i = 0; i < keys.Count; i++)
             {
-                result.Add(key);
+                if (result.Contains(keys[i]))
+                {
+                    continue;
+                }
+                else
+                {
+                    result.Add(keys[i]);
+                }
             }
             
             return result;
