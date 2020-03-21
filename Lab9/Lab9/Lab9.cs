@@ -44,7 +44,7 @@ namespace Lab9
 
             List<string> removedDuplicationKeys = RemoveDuplication(keys);
             int count;
-            if (removedDuplicationKeys.Count <= values.Count)
+            if (keys.Count <= values.Count)
             {
                 count = removedDuplicationKeys.Count;
                 for (int i = 0; i < count; i++)
@@ -52,7 +52,7 @@ namespace Lab9
                     result.Add(removedDuplicationKeys[i], values[i]);
                 }
             }
-            else if (removedDuplicationKeys.Count > values.Count)
+            else if (keys.Count > values.Count)
             {
                 count = values.Count;
                 for (int i = 0; i < count; i++)
