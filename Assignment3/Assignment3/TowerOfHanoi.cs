@@ -8,7 +8,7 @@ namespace Assignment3
 
         public static int GetNumberOfSteps(int numDiscs)
         {
-            if (numDiscs < 1)
+            if (numDiscs < 0)
             {
                 return -1;
             }
@@ -18,11 +18,12 @@ namespace Assignment3
 
         public static List<List<int>[]> SolveTowerOfHanoi(int numDiscs)
         {
+            List<List<int>[]> result = new List<List<int>[]>();
             if (numDiscs < 1)
             {
-                return null;
+                return result;
             }
-            List<List<int>[]> result = new List<List<int>[]>();
+           
             List<int>[] towerList = new List<int>[3] { new List<int>(), new List<int>(), new List<int>() };
             for (int i = 0; i < numDiscs; i++)
             {
@@ -78,7 +79,7 @@ namespace Assignment3
         
         public static int GetMoveCountRecursive(int numDiscs)
         {
-            if(numDiscs == 0)
+            if (numDiscs == 0)
             {
                 return 1;
             }

@@ -8,7 +8,9 @@ namespace Assignment3
     {
         static void Main(string[] args)
         {
-            
+            int steps = TowerOfHanoi.GetNumberOfSteps(0);
+
+            Console.WriteLine(steps);
             var snapshots = TowerOfHanoi.SolveTowerOfHanoi(-1);
             
             if (snapshots == null)
