@@ -41,8 +41,6 @@ namespace Lab9
         public static Dictionary<string, int> CombineListsToDictionary(List<string> keys, List<int> values)
         {
             Dictionary<string, int> result = new Dictionary<string, int>();
-
-            
             int count;
             if (keys.Count <= values.Count)
             {
@@ -50,7 +48,6 @@ namespace Lab9
                 for (int i = 0; i < count; i++)
                 {
                     result.TryAdd(keys[i], values[i]);
-
                 }
             }
             else if (keys.Count > values.Count)
@@ -85,24 +82,6 @@ namespace Lab9
                     result.Add(pair.Key, Math.Abs((decimal)pair.Value / value));
                 }
             }
-            return result;
-        }
-        public static List<string> RemoveDuplication(List<string> keys)
-        {
-            List<string> result = new List<string>();
-        
-            for (int i = 0; i < keys.Count; i++)
-            {
-                if (result.Contains(keys[i]))
-                {
-                    continue;
-                }
-                else
-                {
-                    result.Add(keys[i]);
-                }
-            }
-            
             return result;
         }
     }

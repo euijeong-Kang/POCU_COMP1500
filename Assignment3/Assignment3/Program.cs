@@ -9,41 +9,17 @@ namespace Assignment3
         static void Main(string[] args)
         {
             
-            var snapshots = TowerOfHanoi.SolveTowerOfHanoi(3);
-
-            Debug.Assert(isEqual(snapshots[0][0], new List<int> { 3, 2, 1 }));
-            Debug.Assert(snapshots[0][1].Count == 0);
-            Debug.Assert(snapshots[0][2].Count == 0);
-
-            Debug.Assert(isEqual(snapshots[1][0], new List<int> { 3, 2 }));
-            Debug.Assert(snapshots[1][1].Count == 0);
-            Debug.Assert(isEqual(snapshots[1][2], new List<int> { 1 }));
-
-            Debug.Assert(isEqual(snapshots[2][0], new List<int> { 3 }));
-            Debug.Assert(isEqual(snapshots[2][1], new List<int> { 2 }));
-            Debug.Assert(isEqual(snapshots[2][2], new List<int> { 1 }));
-
-            Debug.Assert(isEqual(snapshots[3][0], new List<int> { 3 }));
-            Debug.Assert(isEqual(snapshots[3][1], new List<int> { 2, 1 }));
-            Debug.Assert(snapshots[3][2].Count == 0);
-
-            Debug.Assert(snapshots[4][0].Count == 0);
-            Debug.Assert(isEqual(snapshots[4][1], new List<int> { 2, 1 }));
-            Debug.Assert(isEqual(snapshots[4][2], new List<int> { 3 }));
-
-            Debug.Assert(isEqual(snapshots[5][0], new List<int> { 1 }));
-            Debug.Assert(isEqual(snapshots[5][1], new List<int> { 2 }));
-            Debug.Assert(isEqual(snapshots[5][2], new List<int> { 3 }));
-
-            Debug.Assert(isEqual(snapshots[6][0], new List<int> { 1 }));
-            Debug.Assert(snapshots[6][1].Count == 0);
-            Debug.Assert(isEqual(snapshots[6][2], new List<int> { 3, 2 }));
-
-            Debug.Assert(snapshots[7][0].Count == 0);
-            Debug.Assert(snapshots[7][1].Count == 0);
-            Debug.Assert(isEqual(snapshots[7][2], new List<int> { 3, 2, 1 }));
-
-            printSnapshots(snapshots);
+            var snapshots = TowerOfHanoi.SolveTowerOfHanoi(-1);
+            
+            if (snapshots == null)
+            {
+                Console.WriteLine("null");
+            }
+            else
+            {
+                printSnapshots(snapshots);
+            }
+            
         }
 
         private static void printSnapshots(List<List<int>[]> snapshots)
