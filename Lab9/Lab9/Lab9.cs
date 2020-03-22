@@ -42,22 +42,23 @@ namespace Lab9
         {
             Dictionary<string, int> result = new Dictionary<string, int>();
 
-            List<string> removedDuplicationKeys = RemoveDuplication(keys);
+            
             int count;
-            if (removedDuplicationKeys.Count <= values.Count)
+            if (keys.Count <= values.Count)
             {
-                count = removedDuplicationKeys.Count;
+                count = keys.Count;
                 for (int i = 0; i < count; i++)
                 {
-                    result.Add(removedDuplicationKeys[i], values[i]);
+                    result.TryAdd(keys[i], values[i]);
+
                 }
             }
-            else if (removedDuplicationKeys.Count > values.Count)
+            else if (keys.Count > values.Count)
             {
                 count = values.Count;
                 for (int i = 0; i < count; i++)
                 {
-                    result.Add(removedDuplicationKeys[i], values[i]);
+                    result.TryAdd(keys[i], values[i]);
                 }
             }
 
