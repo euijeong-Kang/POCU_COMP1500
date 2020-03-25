@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System;
 
 namespace Lab10
 {
@@ -6,12 +7,17 @@ namespace Lab10
     {
         static void Main(string[] args)
         {
+
+            RightTriangle ritdbge = new RightTriangle(10, 14);
+            Console.WriteLine(ritdbge.GetArea());
+
             Rectangle rectangle1 = new Rectangle(5, 5);
 
             Debug.Assert(rectangle1.Width == 5);
             Debug.Assert(rectangle1.Height == 5);
 
             Debug.Assert(rectangle1.GetPerimeter() == 20.000);
+            Console.WriteLine(rectangle1.GetPerimeter());
             Debug.Assert(rectangle1.GetArea() == 25.000);
 
             Rectangle rectangle2 = new Rectangle(10, 4);

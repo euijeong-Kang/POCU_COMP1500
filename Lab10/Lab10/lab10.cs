@@ -39,14 +39,13 @@ namespace Lab10
 
         public double GetPerimeter()
         {
-           
             double thirdSide = Math.Sqrt(Width * Width + Height * Height);
             double perimeter = (int)((Width + Height + thirdSide) * 1000 + 0.5) / 1000.0;
             return perimeter;
         }
         public double GetArea()
         {
-            double area = (int)((Width * Height / 2) * 1000 + 0.5) / 1000.0;
+            double area = Width * Height / 2;
             return area;
         }
     }
