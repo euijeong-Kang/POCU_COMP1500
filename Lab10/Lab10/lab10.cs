@@ -46,7 +46,7 @@ namespace Lab10
         }
         public double GetArea()
         {
-            double area = Width * Height / 2;
+            double area = (int)((Width * Height / 2) * 1000 + 0.5) / 1000.0;
             return area;
         }
     }
