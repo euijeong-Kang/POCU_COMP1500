@@ -8,7 +8,7 @@ namespace Lab10
         static void Main(string[] args)
         {
 
-            RightTriangle ritdbge = new RightTriangle(10, 14);
+            RightTriangle ritdbge = new RightTriangle(7, 13);
             Console.WriteLine(ritdbge.GetArea());
 
             Rectangle rectangle1 = new Rectangle(5, 5);
