@@ -40,9 +40,9 @@ namespace Assignment4
             Debug.Assert(arena.Turns == 0);
             Debug.Assert(arena.MonsterCount == 0);
 
-            arena.LoadMonsters("monsters.txt");
+            arena.LoadMonsters("monsterss.txt");
 
-            Debug.Assert(arena.MonsterCount == 6);
+            Debug.Assert(arena.MonsterCount == 0);
             Debug.Assert(arena.GetHealthiest().Name == "MyMonster5");
 
             arena.GoToNextTurn();
