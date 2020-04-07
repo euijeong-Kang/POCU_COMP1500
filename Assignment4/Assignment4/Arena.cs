@@ -46,7 +46,6 @@ namespace Assignment4
         {
             if (MonsterCount > 1)
             {
-                Turns++;
                 for (int i = 0; i < MonsterCount; i++)
                 {
                     int nextIndex = i + 1;
@@ -61,7 +60,9 @@ namespace Assignment4
                         MonsterCount--;
                     }
                 }
+                Turns++;
             }
+            
 
         }
         public Monster GetHealthiest()
