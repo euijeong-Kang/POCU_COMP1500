@@ -10,7 +10,7 @@ namespace Assignment4
     {
         public uint Capacity { get; private set; }
         public string ArenaName { get; private set; }
-        public uint Turns { get; private set; } = 0;
+        public uint Turns { get; private set; }
         public uint MonsterCount { get; private set; }
         public List<Monster> MonsterList { get; private set; }
 
@@ -46,6 +46,7 @@ namespace Assignment4
         {
             if (MonsterCount > 1)
             {
+                Turns++;
                 for (int i = 0; i < MonsterCount; i++)
                 {
                     int nextIndex = i + 1;
@@ -60,9 +61,8 @@ namespace Assignment4
                         MonsterCount--;
                     }
                 }
-                Turns++;
             }
-            
+
         }
         public Monster GetHealthiest()
         {
