@@ -12,7 +12,7 @@ namespace Assignment4
         public string ArenaName { get; private set; }
         public uint Turns { get; private set; }
         public uint MonsterCount { get; private set; }
-        public List<Monster> MonsterList { get; private set; }
+        public static List<Monster> MonsterList { get; private set; }
 
         public Arena(string arenaName, uint capacity)
         {
