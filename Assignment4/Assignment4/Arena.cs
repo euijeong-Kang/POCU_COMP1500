@@ -25,11 +25,11 @@ namespace Assignment4
             List<Monster> monstersList = new List<Monster>();
 
             using (FileStream fs = File.Open(filePath, FileMode.OpenOrCreate))
-            using (StreamReader sr = new StreamReader(fs, Encoding.UTF8, false))
+            using (StreamReader sr = new StreamReader(fs))
             {
                 while (!sr.EndOfStream)
                 {
-                    if (MonsterCount == Capacity)
+                    if (MonsterCount >= Capacity)
                     {
                         break;
                     }
@@ -62,8 +62,6 @@ namespace Assignment4
                 }
                 Turns++;
             }
-            
-
         }
         public Monster GetHealthiest()
         {
