@@ -12,7 +12,7 @@ namespace Assignment4
         public string ArenaName { get; private set; }
         public uint Turns { get; private set; }
         public uint MonsterCount { get; private set; }
-        public static List<Monster> MonsterList { get; private set; }
+        public List<Monster> MonsterList { get; private set; }
 
         public Arena(string arenaName, uint capacity)
         {
@@ -25,11 +25,11 @@ namespace Assignment4
             List<Monster> monstersList = new List<Monster>();
 
             using (FileStream fs = File.Open(filePath, FileMode.OpenOrCreate))
-            using (StreamReader sr = new StreamReader(fs))
+            using (StreamReader sr = new StreamReader(fs, Encoding.UTF8, false))
             {
                 while (!sr.EndOfStream)
                 {
-                    if (MonsterCount >= Capacity)
+                    if (MonsterCount == Capacity)
                     {
                         break;
                     }
